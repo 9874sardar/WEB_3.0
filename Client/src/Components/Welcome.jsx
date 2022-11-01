@@ -12,6 +12,16 @@ const Welcome =()=> {
 
     }
 
+    const Input =({placeholder,name ,type,value,handleChange}) =>(
+      <input 
+        placeholder={placeholder}
+        type={type}
+        step="0.00001"
+        value={value}
+        onChange={(e)=> handleChange(e,name)}
+        className=" my-2 w-full rounded-sm p-2 outline-none bg-transparent text-white border-none "/>
+    );
+
     return (
       <div className='flex w-full justify-center items-center '>
         <div className='flex md:flex-row flex-col items-start justify-between md:p-20 py-12 px-4'>
@@ -74,7 +84,20 @@ const Welcome =()=> {
             </div>
             {/* Form part */}
             <div className='p-5 sm:w-96 w-full flex flex-col justify-start items-center blue-glassmorphism'>
-              helloc
+              <Input placeholder="Address to" name="addressTo" type="text" handleChange={() => {}} />
+              <Input placeholder="Amount (ETH)" name="amount" type="number" handleChange={() => {}} />
+              <Input placeholder="Keyword (GIF)" name="keyword" type="text" handleChange={() => {}} />
+              <Input placeholder="Enter message" name="message" type="text" handleChange={() => {}} />
+            
+              <div className='h-[1px w-f\ bg-gray-400 my-2'></div>
+
+              { true ? <Loader/>
+              : 
+                <button>
+                  
+                </button>
+              }
+
             </div>
           </div>
 
